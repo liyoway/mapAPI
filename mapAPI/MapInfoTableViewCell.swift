@@ -9,6 +9,9 @@ import UIKit
 
 class MapInfoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var mapInfo: UIButton!
+    @IBOutlet weak var mapName: UILabel!
+    @IBOutlet weak var mapImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

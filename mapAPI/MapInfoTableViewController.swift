@@ -6,32 +6,55 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MapInfoTableViewController: UITableViewController {
+    var mapInfoData: MapInfo?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        fetchData { data in
+            DispatchQueue.main.async {
+                if let data = data {
+                    // 使用 data 做其他處理
+                    self.mapInfoData = data
+                    self.tableView.reloadData() // 重新加載表格視圖
+                } else {
+                    // 處理數據加載失敗的情況
+                    let alert = UIAlertController(title: "Error", message: "Failed to load data", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return mapInfoData?.records.count ?? 0
     }
 
-    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MapInfoTableViewCell", for: indexPath) as! MapInfoTableViewCell
+
+        if let record = mapInfoData?.records[indexPath.row] {
+            cell.mapName.text = record.fields.areaName
+            if let url = record.fields.areaImage.first?.url {
+                cell.mapImage.kf.setImage(with: URL(string: url))
+                
+            }
+        }
+        return cell
+    }
+
+  /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
