@@ -46,6 +46,9 @@ class MapInfoTableViewController: UITableViewController {
 
         if let record = mapInfoData?.records[indexPath.row] {
             cell.mapName.text = record.fields.areaName
+            cell.url = record.fields.areaInfo
+            
+            
             if let url = record.fields.areaImage.first?.url {
                 cell.mapImage.kf.setImage(with: URL(string: url))
                 

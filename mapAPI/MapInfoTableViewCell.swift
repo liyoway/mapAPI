@@ -6,17 +6,18 @@
 //
 
 import UIKit
+import SafariServices
 
-class MapInfoTableViewCell: UITableViewCell {
+class MapInfoTableViewCell: UITableViewCell, SFSafariViewControllerDelegate {
 
-    @IBOutlet weak var mapInfo: UIButton!
     @IBOutlet weak var mapName: UILabel!
     @IBOutlet weak var mapImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    var url: String?
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

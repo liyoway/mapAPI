@@ -11,7 +11,7 @@
         <scene sceneID="3hT-j6-bdZ">
             <objects>
                 <tableViewController id="3Cd-wz-VFv" customClass="MapInfoTableViewController" customModule="mapAPI" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ZXV-Ui-xDe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ZXV-Ui-xDe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -27,32 +27,22 @@
                                             <rect key="frame" x="0.0" y="2" width="128" height="126"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RnS-Ec-6Y3">
-                                            <rect key="frame" x="138" y="11" width="248" height="44"/>
+                                            <rect key="frame" x="137.99999999998431" y="44.39689331125237" width="247.99999999997749" height="43.999999999999886"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYJ-tr-WDf">
-                                            <rect key="frame" x="138" y="65" width="245" height="55"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="5a7-6j-FE9" firstAttribute="top" secondItem="O79-wk-GTK" secondAttribute="top" constant="2" id="29k-Mr-oaB"/>
-                                        <constraint firstItem="TYJ-tr-WDf" firstAttribute="leading" secondItem="5a7-6j-FE9" secondAttribute="trailing" constant="10" id="WQw-qw-Oxo"/>
-                                        <constraint firstAttribute="trailing" secondItem="TYJ-tr-WDf" secondAttribute="trailing" constant="10" id="Yus-1j-c6F"/>
-                                        <constraint firstItem="TYJ-tr-WDf" firstAttribute="top" secondItem="RnS-Ec-6Y3" secondAttribute="bottom" constant="10" id="ba1-7B-Vtw"/>
                                         <constraint firstAttribute="bottom" secondItem="5a7-6j-FE9" secondAttribute="bottom" constant="2" id="boT-74-lFj"/>
                                         <constraint firstItem="RnS-Ec-6Y3" firstAttribute="leading" secondItem="5a7-6j-FE9" secondAttribute="trailing" constant="10" id="fPy-Va-ATY"/>
-                                        <constraint firstAttribute="bottom" secondItem="TYJ-tr-WDf" secondAttribute="bottom" constant="10" id="nPF-cL-YjJ"/>
                                         <constraint firstItem="5a7-6j-FE9" firstAttribute="leading" secondItem="O79-wk-GTK" secondAttribute="leading" id="vbN-OT-6bY"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="mapImage" destination="5a7-6j-FE9" id="vhQ-b3-Hgu"/>
-                                    <outlet property="mapInfo" destination="TYJ-tr-WDf" id="EdC-UQ-rjU"/>
                                     <outlet property="mapName" destination="RnS-Ec-6Y3" id="30r-zC-Lpu"/>
                                 </connections>
                             </tableViewCell>
