@@ -7,12 +7,13 @@
 
 import Foundation
 
+let apiKey = APIKey.default
 var mapInfoData: MapInfo?
 func fetchData(completion: @escaping (MapInfo?) -> Void) {
     if let url = URL(string: "https://api.airtable.com/v0/app1MfmI8sP5PmaSp/mapInfo") {
         var request = URLRequest(url: url)
         // 設置授權標頭
-        request.setValue("Bearer patYTRmUpfnX3K54j.4624ca34ef64ebaa6f4d4628503959e7fef17e6dbe8577bbfc8773ed30fcc566", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         
         // 發送 HTTP 請求
         URLSession.shared.dataTask(with: request) { data, response, error in
